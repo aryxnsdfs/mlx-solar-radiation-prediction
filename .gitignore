@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Kaggle and generated outputs
+submission*.csv
+features*.json
+tuning*.out
+catboost_info/
+
+# Local data files
+train_df_1.csv
+test_df_1.csv
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

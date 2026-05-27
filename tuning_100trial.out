@@ -1,0 +1,47 @@
+Loading and sorting data by UNIXTime...
+Train shape: (20004, 12); test shape: (3334, 12)
+Clipping 4344 negative training Radiation values to 0 before log1p.
+Engineering static physics/time features and shifted time-series dynamics...
+Using 96 numeric features. Feature list saved to features_100trial.json.
+Optuna search uses 3 folds; final OOF uses 5 folds.
+Tuning LightGBM...
+Tuning XGBoost...
+Tuning CatBoost...
+Generating OOF and averaged test predictions...
+LGB fold 1: log RMSE 0.76133
+LGB fold 2: log RMSE 0.74292
+LGB fold 3: log RMSE 0.73991
+LGB fold 4: log RMSE 0.83858
+LGB fold 5: log RMSE 0.79779
+LGB OOF log RMSE: 0.77701 on 16670 rows
+XGB fold 1: log RMSE 0.76099
+XGB fold 2: log RMSE 0.74332
+XGB fold 3: log RMSE 0.74404
+XGB fold 4: log RMSE 0.82836
+XGB fold 5: log RMSE 0.80058
+XGB OOF log RMSE: 0.77619 on 16670 rows
+CAT fold 1: log RMSE 0.76715
+CAT fold 2: log RMSE 0.74866
+CAT fold 3: log RMSE 0.74772
+CAT fold 4: log RMSE 0.82026
+CAT fold 5: log RMSE 0.80629
+CAT OOF log RMSE: 0.77859 on 16670 rows
+STACK OOF log RMSE: 0.77312
+Ridge weights: {'lgb': 0.8008, 'xgb': 0.85251, 'cat': 0.76884}
+Done. Saved submission_100trial.csv
+count    3334.000000
+mean      205.284951
+std       302.123086
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%       383.409114
+max       966.118747
+Name: TARGET, dtype: float64
+Submission diagnostics:
+  Exact 50.0 count: 0
+  Zero fraction: 0.5306
+  Night fraction outside 6am-6pm: 0.4982
+  Zeros in 8am-4pm: 0 / 1122
+  Target std: 302.1231
+  Target max: 966.1187
